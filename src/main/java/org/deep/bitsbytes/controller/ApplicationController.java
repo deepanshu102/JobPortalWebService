@@ -33,11 +33,11 @@ public class ApplicationController {
 	}
 
 	@PostMapping("/{jobId}")
-	public Application appliedJob(@PathVariable Integer jobId) {
+	public Application appliedJob() {
 
 		Application entity = new Application();
 		entity.setJobSeeker(jobSeekerRepository.findById(1).get());
-		entity.setJobId(jobRepository.findById(jobId).get());
+		entity.setJobId(jobRepository.findById(1).get());
 		entity.setStatus(false);
 		entity.setAppliedDate(new Date(10, 20, 1997));
 
