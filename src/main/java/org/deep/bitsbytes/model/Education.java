@@ -1,8 +1,6 @@
 package org.deep.bitsbytes.model;
 
 
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Education{
@@ -30,6 +29,7 @@ public class Education{
 	@JoinColumn(name="cat_id")
 	@OrderColumn(name="education_category_id")
 	private EducationCategory educationCategory;
+	
 	
 	
 	public EducationCategory getEducationCategory() {
@@ -96,10 +96,5 @@ public class Education{
 	public void setPassingYear(String passingYear) {
 		this.passingYear = passingYear;
 	}
-
-
-
-
-	
 
 }
